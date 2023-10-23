@@ -1,4 +1,4 @@
-<h1>Rails Form</h1>
+<h1>Edit Form</h1>
 
 <!--
 <form action="/users" method="post" accept-charset="UTF-8">
@@ -26,7 +26,7 @@
 <% if @user.errors.any? %>
 
     <div id="error_explanation">
-        <h2><%= pluralize(@user.errors.count, "error")%> prohibited this user from being created </h2>
+        <h2><%= pluralize(@user.errors.count, "error")%> prohibited this user from being created or edited</h2>
         <ul>
         <% @user.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
@@ -39,12 +39,12 @@
 <%= form_with model: @user do |form| %>
     <%= form.label :username %>
     <%= form.text_field :username, placeholder: "Your username here" %>
-
+    <br>
     <%= form.label :password %>
     <%= form.password_field :password %>
-
+    <br>
     <%= form.label :email %>
     <%= form.email_field :email, placeholder: "example@example.com", value: "john@example.com" %>
-
+    <br>
     <%= form.submit "Submit" %>
 <% end %>
